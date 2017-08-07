@@ -685,8 +685,9 @@ class AgglomerativeClustering(BaseEstimator, ClusterMixin):
 
         Parameters
         ----------
-        X : array-like, shape = [n_samples, n_features]
-            The samples a.k.a. observations.
+        X : array-like, shape (n_samples, n_features) or (n_samples, n_samples)
+            The samples a.k.a. observations or, if affinity is ``precomputed``,
+            matrix of similarities / affinities.
 
         Returns
         -------
@@ -842,8 +843,9 @@ class FeatureAgglomeration(AgglomerativeClustering, AgglomerationTransform):
 
         Parameters
         ----------
-        X : array-like, shape = [n_samples, n_features]
-            The data
+        X : array-like, shape (n_samples, n_features) or (n_samples, n_samples)
+            The samples a.k.a. observations or, if affinity is ``precomputed``,
+            matrix of similarities / affinities.
 
         Returns
         -------
